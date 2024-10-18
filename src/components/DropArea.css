@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .drag__container {
+    @apply h-32 flex justify-between items-center w-full;
+  }
+  .drag__item__on {
+    @apply border border-dashed 
+    rounded-md h-16 
+    p-4 mx-6 w-72 
+     text-center text-zinc-500 text-xl;
+  }
+  .drag__empty {
+    @apply w-full h-8 transition-all delay-75 border-none;
+  }
+}
