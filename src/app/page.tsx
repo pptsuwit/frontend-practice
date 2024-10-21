@@ -6,7 +6,7 @@ export default function Home() {
     { path: "/practice-01", name: "Practice 01 - Todolist Drag And Drop" },
     { path: "/practice-02", name: "Practice 02 - InfiniteScroll Image" },
     { path: "/practice-03", name: "Practice 03 - Form Register" },
-    // { path: "/practice-04", name: "Practice 04" },
+    { path: "/practice-04", name: "Practice 04 - Search Filter" },
     // { path: "/practice-05", name: "Practice 05" },
     // { path: "/practice-06", name: "Practice 06" },
     // { path: "/practice-07", name: "Practice 07" },
