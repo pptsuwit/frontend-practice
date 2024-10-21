@@ -8,7 +8,7 @@ import Input from "@/components/InputHookForm";
 import { useGlobalContext } from "@/context/global.context";
 type FormData = z.infer<typeof registerSchema>;
 export default function page() {
-  const { messageApi, dataMessage, setDataMessage } = useGlobalContext();
+  const { messageApi } = useGlobalContext();
   const {
     register,
     handleSubmit,
@@ -17,16 +17,7 @@ export default function page() {
     resolver: zodResolver(registerSchema),
   });
   async function onSubmit(data: FormData) {
-    const register = {
-      email: data.email,
-      firstName: data.firstName,
-      lastName: data.lastName,
-      password: data.password,
-    };
-
     messageApi("success", `Register successfully email is ${data.email}`);
-    setDataMessage(data.email);
-    console.log(register);
   }
 
   return (

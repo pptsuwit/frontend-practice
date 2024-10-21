@@ -1,40 +1,37 @@
 "use client";
 
-import { CountdownProps, TimePicker, TimePickerProps } from "antd";
+import { TimePicker, TimePickerProps, Statistic } from "antd";
 import { useEffect, useState } from "react";
-import { Statistic } from "antd";
 const { Countdown } = Statistic;
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import { useGlobalContext } from "@/context/global.context";
 dayjs.extend(customParseFormat);
 
 export default function Page() {
+  const { messageApi } = useGlobalContext();
   const [seconds, setSeconds] = useState(0);
   const [minute, setMinute] = useState(0);
   const [hour, setHour] = useState(0);
   const [pause, setPause] = useState(false);
+  const [startTimer, setStartTimer] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (!pause) {
         if (seconds > 0) {
           setSeconds(seconds - 1);
-        } else {
-          if (minute > 0) {
-            setSeconds(59);
-            setMinute(minute - 1);
-          } else {
-            if (hour > 0) {
-              setSeconds(59);
-              setMinute(59);
-              setHour(hour - 1);
-            } else {
-              setSeconds(0);
-              setMinute(0);
-              setHour(0);
-              setPause(true);
-            }
-          }
+        } else if (minute > 0) {
+          setSeconds(59);
+          setMinute(minute - 1);
+        } else if (hour > 0) {
+          setSeconds(59);
+          setMinute(59);
+          setHour(hour - 1);
+        } else if (startTimer) {
+          setPause(true);
+          setStartTimer(false);
+          messageApi("success", `Finished!`);
         }
       }
     }, 1000);
@@ -51,6 +48,7 @@ export default function Page() {
   };
   const start = () => {
     setPause(false);
+    setStartTimer(true);
   };
   const pauseTime = () => {
     setPause(true);
@@ -60,6 +58,7 @@ export default function Page() {
     setMinute(0);
     setHour(0);
     setPause(true);
+    setStartTimer(false);
   };
   return (
     <div className="grid justify-center text-center gap-y-8 p-12">
