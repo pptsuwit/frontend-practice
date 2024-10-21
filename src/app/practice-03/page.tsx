@@ -33,8 +33,6 @@ export default function page() {
     <div className="flex items-center justify-center h-screen">
       <div className="bg-white border border-gray-200 shadow-lg p-8 rounded-lg w-full sm:w-[500px]">
         <h1 className="text-5xl text-center text-blue-600 font-semibold mb-6">Register</h1>
-        Test:
-        {dataMessage}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label className="block text-gray-700 text-md font-bold mb-2" htmlFor="firstName">
