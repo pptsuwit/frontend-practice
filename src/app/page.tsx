@@ -9,7 +9,7 @@ export default function Home() {
     { path: "/practice-04", name: "Practice 04 - Search Filter" },
     { path: "/practice-05", name: "Practice 05 - Timer" },
     { path: "/practice-06", name: "Practice 06 - Memory Game" },
-    // { path: "/practice-07", name: "Practice 07" },
+    { path: "/practice-07", name: "Practice 07 - Shopping Cart" },
     // { path: "/practice-08", name: "Practice 08" },
     // { path: "/practice-09", name: "Practice 09" },
     // { path: "/practice-10", name: "Practice 10" },

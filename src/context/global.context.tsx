@@ -1,11 +1,19 @@
 "use client";
-import { createContext, Dispatch, SetStateAction, useContext, useMemo, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { message } from "antd";
 import { NoticeType } from "antd/es/message/interface";
 
 interface ContextProps {
-  dataMessage: string;
-  setDataMessage: Dispatch<SetStateAction<string>>;
+  cart: Product[];
+  setCart: Dispatch<SetStateAction<Product[]>>;
   messageApi: (type: NoticeType, message: string) => void;
 }
 
@@ -21,14 +29,24 @@ export const GlobalContextProvider = ({ children }: { children: React.ReactNode 
     });
   };
 
-  const [dataMessage, setDataMessage] = useState<string>("");
+  const [cart, setCart] = useState<Product[]>(() => {
+    try {
+      return JSON.parse(localStorage.getItem("cart") as string) || [];
+    } catch (error) {
+      console.error("Failed to parse cart from localStorage:", error);
+      return [];
+    }
+  });
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
   const contextValue = useMemo(
     () => ({
       messageApi,
-      setDataMessage,
-      dataMessage,
+      cart,
+      setCart,
     }),
-    [api, setDataMessage, dataMessage]
+    [api, setCart, cart]
   );
   return (
     <GlobalContext.Provider value={contextValue}>
