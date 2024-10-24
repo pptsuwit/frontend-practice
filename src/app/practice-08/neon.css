@@ -1,0 +1,52 @@
+@tailwind utilities;
+@layer utilities {
+  .neon__white__text {
+    font-family: var(--font--neon);
+    @apply text-zinc-200;
+    text-shadow: 0 0 63px #fff;
+  }
+  .neon__text__purple {
+    font-family: var(--font--neon);
+    color: #fff;
+    text-shadow: 0 0 0.2rem #9461fd, 0 0 0.2rem #9461fd, 0 0 0.8rem #9461fd, 0 0 1.8rem #9461fd,
+      0 0 2.3rem #9461fd;
+  }
+  .neon__pink {
+    box-shadow: 0 0 0.2rem #fff, 0 0 2rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe,
+      inset 0 0 1.3rem #bc13fe;
+  }
+  .neon__purple {
+    box-shadow: 0 0 0.2rem #fff, 0 0 2rem #9461fd, 0 0 0.8rem #9461fd, 0 0 2.8rem #9461fd,
+      inset 0 0 1.3rem #9461fd;
+  }
+  .neon__turquoise {
+    box-shadow: 0 0 0.2rem #fff, 0 0 2rem turquoise, 0 0 0.8rem turquoise, 0 0 2.8rem turquoise,
+      inset 0 0 1.3rem turquoise;
+  }
+  .neon__palevioletred {
+    box-shadow: 0 0 0.2rem #fff, 0 0 2rem palevioletred, 0 0 0.8rem palevioletred,
+      0 0 2.8rem palevioletred, inset 0 0 1.3rem palevioletred;
+  }
+  .neon__orange {
+    box-shadow: 0 0 0.2rem #fff, 0 0 2rem #e68b03, 0 0 0.8rem #e68b03, 0 0 2.8rem #e68b03,
+      inset 0 0 1.3rem #e68b03;
+  }
+  .neon__red {
+    box-shadow: 0 0 0.2rem #fff, 0 0 2rem #e60303, 0 0 0.8rem #e60303, 0 0 2.8rem #e60303,
+      inset 0 0 1.3rem #e60303;
+  }
+  .neon__green {
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.8rem #00fe9b, 0 0 1rem #00fe9b, inset 0 0 1.3rem #00fe9b;
+  }
+  .neon__tag {
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.8rem #bc13fe, 0 0 1.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  }
+  .neon__dark__btn {
+    box-shadow: 0 0 0.2rem #9461fd, 0 0 0.2rem #9461fd, 0 0 0.8rem #9461fd, inset 0 0 1.3rem #9461fd;
+  }
+  .neon__light__btn {
+    background: #fff;
+    box-shadow: 0 0 0.2rem #fff, 0 0 2rem #eab308, 0 0 0.8rem #eab308, 0 0 2.8rem #eab308,
+      inset 0 0 1.3rem #eab308;
+  }
+}
