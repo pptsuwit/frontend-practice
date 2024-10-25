@@ -27,7 +27,7 @@ export default function Page() {
                     href="https://github.com/pptsuwit"
                     className="text-2xl text__default dark:!neon__text__purple"
                   >
-                    https://github.com/pptsuwit
+                    github.com/pptsuwit
                   </a>
                 </div>
               </div>
