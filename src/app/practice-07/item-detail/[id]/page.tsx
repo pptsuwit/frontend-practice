@@ -1,9 +1,9 @@
 "use client";
 
 import { useGlobalContext } from "@/context/global.context";
-import { Button, Rate } from "antd";
+import { Badge, Button, Rate } from "antd";
 import { useEffect, useState } from "react";
-
+import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
 
 export default function ItemDetail({ params }: Readonly<{ params: { id: string } }>) {
@@ -30,7 +30,10 @@ export default function ItemDetail({ params }: Readonly<{ params: { id: string }
   function addItemToCart() {
     const findItem = cart.find((w) => w.id === parseInt(params.id));
     if (!findItem) {
-      setCart((prev) => [...prev, { ...item, ...{ quantity: 1 } }]);
+      setCart((prev) => {
+        localStorage.setItem("cart", JSON.stringify([...prev, { ...item, ...{ quantity: 1 } }]));
+        return [...prev, { ...item, ...{ quantity: 1 } }];
+      });
       messageApi("success", "Item added to cart");
     } else {
       messageApi("error", "Item already in cart");
@@ -38,10 +41,17 @@ export default function ItemDetail({ params }: Readonly<{ params: { id: string }
   }
   return (
     <div className="">
-      <div className="flex justify-end px-14 py-8">
+      <div className="flex justify-between px-14 py-8">
         <Button onClick={() => router.push(`/practice-07`)} color="default" variant="outlined">
           Back
         </Button>
+        <Badge count={cart.length}>
+          <Button
+            shape="circle"
+            onClick={() => router.push("/practice-07/cart")}
+            icon={<ShoppingCartOutlined className="text-3xl" />}
+          ></Button>
+        </Badge>
       </div>
       <div className="w-[600px] mx-auto flex flex-col gap-4 p-8 border rounded-lg">
         <div>

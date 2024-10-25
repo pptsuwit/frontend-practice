@@ -29,17 +29,11 @@ export const GlobalContextProvider = ({ children }: { children: React.ReactNode 
     });
   };
 
-  const [cart, setCart] = useState<Product[]>(() => {
-    try {
-      return JSON.parse(localStorage.getItem("cart") as string) || [];
-    } catch (error) {
-      console.error("Failed to parse cart from localStorage:", error);
-      return [];
-    }
-  });
+  const [cart, setCart] = useState<Product[]>([]);
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+    // localStorage.setItem("cart", JSON.stringify(cart));
+    setCart(JSON.parse(localStorage.getItem("cart") as string) || []);
+  }, []);
   const contextValue = useMemo(
     () => ({
       messageApi,

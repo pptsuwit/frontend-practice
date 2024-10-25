@@ -14,7 +14,6 @@ export default function Page() {
   const apiUrl = "https://fakestoreapi.com/products";
   const [defaultItems, setDefaultItems] = useState<Product[]>([]);
   const [items, setItems] = useState<Product[]>([]);
-  const [cartCount, setCartCount] = useState<number>(0);
   const fetchData = async () => {
     const response = await fetch(`${apiUrl}`);
     const data = await response.json();
@@ -23,7 +22,6 @@ export default function Page() {
   };
   useEffect(() => {
     fetchData();
-    setCartCount(cart.length);
   }, []);
   // ChangeEvent<HTMLInputElement>
   const onSearch = (value: string) => {
@@ -37,7 +35,7 @@ export default function Page() {
   return (
     <div className="p-8">
       <div className="flex justify-end px-4">
-        <Badge count={cartCount}>
+        <Badge count={cart.length}>
           <Button
             shape="circle"
             onClick={() => router.push(`${pathname}/cart`)}
