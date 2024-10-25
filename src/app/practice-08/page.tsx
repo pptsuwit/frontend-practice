@@ -53,14 +53,6 @@ export default function Page() {
                               dark:hover:neon__turquoise"
                   />
                 </a>
-                <a href="/pdf/Suwit_Resume.pdf" target="_blank" rel="noopener noreferrer">
-                  <FilePdfFilled
-                    className="text-[22px] icon-scale p-1.5
-                                neumorphism-convex text-zinc-400 hover:text-red-500
-                                dark:none__neumorphism dark:neon__purple  
-                              dark:hover:neon__palevioletred"
-                  />
-                </a>
               </div>
             </div>
           </div>
