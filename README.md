@@ -93,7 +93,7 @@
 การจัดการ event และ logic ของเกม
 การใช้ CSS เพื่อทำให้การ์ดดูมีสไตล์
 
-### โจทย์ 9 ระบบการจัดการตะกร้าสินค้า (Shopping Cart)
+### โจทย์ 7 ระบบการจัดการตะกร้าสินค้า (Shopping Cart)
 
 #### รายละเอียด
 
@@ -108,7 +108,7 @@
 การทำงานกับ array ของสินค้า
 การสร้างประสบการณ์การใช้งานที่ราบรื่น
 
-### โจทย์ 10 การสร้างระบบ Dark Mode/Light Mode
+### โจทย์ 8 การสร้างระบบ Dark Mode/Light Mode
 
 #### รายละเอียด
 
@@ -123,7 +123,7 @@
 การจัดการกับ LocalStorage
 การออกแบบ UI ที่ยืดหยุ่น
 
-### โจทย์ 11 การสร้าง Animation ในการโหลดข้อมูล (Loading Animation)
+### โจทย์ 9 การสร้าง Animation ในการโหลดข้อมูล (Loading Animation)
 
 #### รายละเอียด
 
@@ -137,3 +137,7 @@
 ความเข้าใจในการจัดการ asynchronous data
 การออกแบบ animation ด้วย CSS หรือ JavaScript
 การจัดการ UX ในขณะที่รอการประมวลผลข้อมูล
+
+### โจทย์ พิเศษ Auto Delete Todo List (7-solutions)
+
+https://github.com/7-solutions/frontend-assignment

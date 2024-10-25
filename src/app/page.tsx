@@ -2,7 +2,6 @@
 
 export default function Home() {
   const list = [
-    { path: "/practice-ex-todolist-5s", name: "Practice extra todo-list-5sec (7Solution)" },
     { path: "/practice-01", name: "Practice 01 - Todolist Drag And Drop" },
     { path: "/practice-02", name: "Practice 02 - InfiniteScroll Image" },
     { path: "/practice-03", name: "Practice 03 - Form Register" },
@@ -11,9 +10,8 @@ export default function Home() {
     { path: "/practice-06", name: "Practice 06 - Memory Game" },
     { path: "/practice-07", name: "Practice 07 - Shopping Cart" },
     { path: "/practice-08", name: "Practice 08 - Dark Light Theme" },
-    // { path: "/practice-09", name: "Practice 09" },
-    // { path: "/practice-10", name: "Practice 10" },
-    // { path: "/practice-11", name: "Practice 11" },
+    { path: "/practice-09", name: "Practice 09 - Loading Screen" },
+    { path: "/practice-ex-todolist-5s", name: "Practice extra todo-list-5sec (7Solution)" },
   ];
 
   return (
